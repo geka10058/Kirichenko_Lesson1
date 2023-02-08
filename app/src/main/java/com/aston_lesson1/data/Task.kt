@@ -1,11 +1,12 @@
 package com.aston_lesson1.data
 
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Parcelize
+@Entity(tableName = "task_table")
 data class Task(
-    var title: String = "",
-    var description: String = ""
-): Parcelable
+    @PrimaryKey @ColumnInfo(name = "title") var title: String,
+    @ColumnInfo(name = "description") var description: String
+)
