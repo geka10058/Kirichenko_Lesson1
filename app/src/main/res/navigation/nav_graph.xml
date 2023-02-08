@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_taskFragment_to_taskFragment2"
             app:destination="@id/taskFragment2" />
+        <argument
+            android:name="task"
+            app:argType="com.aston_lesson1.data.Task"/>
     </fragment>
     <fragment
         android:id="@+id/taskFragment2"
