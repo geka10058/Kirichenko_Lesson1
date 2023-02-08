@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -17,7 +18,6 @@ import com.aston_lesson1.ui.TasksAdapter
 
 class TaskListFragment : Fragment(R.layout.fragment_task_list), OnItemClickListener {
 
-
     private var _binding: FragmentTaskListBinding? = null
     private val binding get() = requireNotNull(_binding)
     private val viewModel: TaskListVM by viewModels {
@@ -28,7 +28,7 @@ class TaskListFragment : Fragment(R.layout.fragment_task_list), OnItemClickListe
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTaskListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,12 +37,8 @@ class TaskListFragment : Fragment(R.layout.fragment_task_list), OnItemClickListe
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentTaskListBinding.bind(view)
-        val tasksAdapter = TasksAdapter(this)
 
-        /*task?.let {
-        Log.d("TAG", "TASK: $it")
-            val list = listOf<Task>(it)
-            taskList.postValue(list) }*/
+        val tasksAdapter = TasksAdapter(this)
 
         binding.apply {
             recyclerViewTask.apply {
@@ -63,6 +59,6 @@ class TaskListFragment : Fragment(R.layout.fragment_task_list), OnItemClickListe
     }
 
     override fun onItemClick(task: Task) {
-
+        Toast.makeText(requireContext(),R.string.task_delete_text, Toast.LENGTH_LONG).show()
     }
 }

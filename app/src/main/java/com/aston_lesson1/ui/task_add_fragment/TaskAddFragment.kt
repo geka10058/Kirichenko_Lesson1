@@ -29,7 +29,7 @@ class TaskAddFragment() : Fragment(R.layout.fragment_add_task) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAddTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,29 +57,27 @@ class TaskAddFragment() : Fragment(R.layout.fragment_add_task) {
                         title =="" && description == "" ->{
                             Toast.makeText(
                                 requireContext(),
-                                "You didn't fill in the fields",
+                                R.string.fields_are_empty,
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                         task.title == "" -> {
                             Toast.makeText(
                                 requireContext(),
-                                "Title field is empty",
+                                R.string.fields_title_is_empty,
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                         task.description == "" -> {
                             Toast.makeText(
                                 requireContext(),
-                                "Description field is empty",
+                                R.string.fields_description_is_empty,
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                         else -> {
                             viewModel.saveTaskToDB(task)
-                            val action =
-                                TaskAddFragmentDirections.actionTaskFragment2ToTaskFragment()
-                            findNavController().navigate(action)
+                            findNavController().navigateUp()
                         }
                     }
                 }
