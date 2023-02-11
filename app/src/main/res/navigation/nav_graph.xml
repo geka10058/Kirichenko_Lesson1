@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.aston_lesson1.ui.TaskListFragment"
+        android:name="com.aston_lesson1.ui.task_list_fragment.TaskListFragment"
         android:label="fragment_task_list"
         tools:layout="@layout/fragment_task_list" >
         <action
@@ -16,11 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/taskFragment2"
-        android:name="com.aston_lesson1.ui.TaskAddFragment"
+        android:name="com.aston_lesson1.ui.task_add_fragment.TaskAddFragment"
         android:label="fragment_add_task"
-        tools:layout="@layout/fragment_add_task" >
-        <action
-            android:id="@+id/action_taskFragment2_to_taskFragment"
-            app:destination="@id/taskFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_task" />
 </navigation>

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Aston_Lesson1</string>
+    <string name="app_name">Aston Lesson One</string>
+    <string name="task_title">Task title</string>
+    <string name="task_description">Task description</string>
+    <string name="task_delete_text">That way it will be possible to delete this task</string>
+    <string name="fields_are_empty">Both fields are empty</string>
+    <string name="fields_title_is_empty">Title field is empty</string>
+    <string name="fields_description_is_empty">Description field is empty</string>
 </resources>
